@@ -17,10 +17,8 @@ use serde::{Serialize, Deserialize};
 const SOCKET_PATH: &str = "/tmp/robot/detect-socket";
 
 // Client thread for reciveing detection data from ROS node infra
-fn start_unix_socket_client_thread( shared_data: Arc<Mutex<Vec<String>>>) -> (JoinHandle<()>) {
+fn start_unix_socket_client_thread( shared_data: Arc<Mutex<Vec<String>>>) -> JoinHandle<()> {
     println!("> Connect to Detect server");
-    //let (tx, rx) = mpsc::channel::<String>();
-    let (response_tx, response_rx) = mpsc::channel::<String>();
 
     let client_thread = thread::spawn(move || {
         let mut stream = match UnixStream::connect(SOCKET_PATH) {
@@ -38,6 +36,7 @@ fn start_unix_socket_client_thread( shared_data: Arc<Mutex<Vec<String>>>) -> (Jo
                 Ok(size) => {
                     if size == 0 { 
                         // Server closed connection or sent empty message
+                        println!("> server send empty msg");
                         break;
                     }
 
@@ -67,11 +66,11 @@ fn main() -> Result<(), eframe::Error> {
 
     println!("************ Detect GUI: ********** ");
 
-     // Create a shared buffer for storing received messages
+     // Create a shared buffer for storing received detected messages
     let shared_data: Arc<Mutex<Vec<String>>> = Arc::new(Mutex::new(Vec::new()));
+    let prev_objects: Vec<DetObj> = Vec::new();
 
     // Channel for sending messages to the client thread
-    //let (tx, response_rx, client_thread) = start_unix_socket_client_thread(shared_data.clone());
     let client_thread = start_unix_socket_client_thread(shared_data.clone());
 
 
@@ -91,8 +90,8 @@ fn main() -> Result<(), eframe::Error> {
                 name: "Robot 1".to_owned(),
                 item: 42,
                 //response_rx: response_rx.clone(), // Clone Arc for shared ownership
-                shared_data: shared_data.clone(), // Add this line
-
+                shared_data: shared_data.clone(), // connect client data to GUI
+                prev_objects: prev_objects, // state for holding prev valid detected obj
             })
         }),
     )
@@ -103,7 +102,7 @@ struct MyApp {
     item: u32,
     //response_rx: Arc<Mutex<Receiver<String>>>, 
     shared_data: Arc<Mutex<Vec<String>>>, // Add this line
-
+    prev_objects:  Vec<DetObj>,
 
 
 }
@@ -146,13 +145,15 @@ impl eframe::App for MyApp {
                 box_location: BoxCor(470.0, 220.0, 50.0, 180.0),
                 otype: "person1".to_string(),
             });
-            let dboxes: Vec<DetObj> = get_detected_objs(self.shared_data.clone());
+            let mut dboxes: Vec<DetObj> = get_detected_objs(self.shared_data.clone());
             if dboxes.is_empty() {
                 // Do something if dboxes is empty
                 println!("No objects detected.");
+                dboxes = self.prev_objects.clone();
             } else {
                 // Do something if dboxes is not empty
                 println!("Detected objects: {:?}", dboxes);
+                self.prev_objects = dboxes.clone();
             }
             // Iterate over all detected objects
             //for dbox in &dboxes {    
@@ -188,11 +189,10 @@ impl eframe::App for MyApp {
         });
     }
 }
-
-#[derive(Serialize, Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug, Clone)]
 struct BoxCor(f32,f32,f32,f32);
 
-#[derive(Serialize, Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug, Clone)]
 struct DetObj {
     box_location: BoxCor,
     otype: String,
@@ -217,9 +217,9 @@ fn get_detected_objs(shared_data: Arc<Mutex<Vec<String>>>) -> Vec<DetObj> {
         }
 
         // Remove processed data in reverse order to avoid shifting indexes
-        //for index in indexes_to_remove.iter().rev() {
-        //    data_vec.swap_remove(*index);
-        //}
+        for index in indexes_to_remove.iter().rev() {
+            data_vec.swap_remove(*index);
+        }
     }
 
     objects

@@ -18,6 +18,7 @@ dependencies = [
 name = "Detect_subscriber"
 version = "0.1.0"
 dependencies = [
+ "rand",
  "serde",
  "serde_json",
 ]
