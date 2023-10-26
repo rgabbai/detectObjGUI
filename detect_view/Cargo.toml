@@ -1,0 +1,24 @@
+[package]
+name = "Detect_gui"
+version = "0.1.0"
+authors = ["Rony Gabbai <rony.gabbai@gmail.com>"]
+license = "MIT OR Apache-2.0"
+edition = "2021"
+rust-version = "1.70"
+publish = false
+
+
+[dependencies]
+eframe = { path = "/home/rgabbai/projects/Rust/egui/crates/eframe", features = [
+    "__screenshot", # __screenshot is so we can dump a screenshot using EFRAME_SCREENSHOT_TO
+] }
+
+# For image support:
+egui_extras = { path = "/home/rgabbai/projects/Rust/egui/crates/egui_extras", features = ["image"] }
+image = { version = "0.24", default-features = false, features = [
+  "jpeg",
+  "png",
+] }
+env_logger = "0.10"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"

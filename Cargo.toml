@@ -1,0 +1,6 @@
+[workspace]
+
+members = [
+    "detect_subscriber", # Rust detect_subscriber node
+    "detect_view", # visual app
+]
