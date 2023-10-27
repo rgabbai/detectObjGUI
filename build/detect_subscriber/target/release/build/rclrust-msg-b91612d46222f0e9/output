@@ -1,3 +1,0 @@
-cargo:rerun-if-env-changed=AMENT_PREFIX_PATH
-cargo:rustc-link-search=native=/home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/lib
-cargo:rustc-link-search=native=/opt/ros/foxy/lib
