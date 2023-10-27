@@ -1,0 +1,2 @@
+Invoking command in '/home/rgabbai/projects/Rust/obj_det_view_node/build/detect_subscriber': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/local/bin/cmake --build /home/rgabbai/projects/Rust/obj_det_view_node/build/detect_subscriber -- -j4 -l4
+Invoked command in '/home/rgabbai/projects/Rust/obj_det_view_node/build/detect_subscriber' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/local/bin/cmake --build /home/rgabbai/projects/Rust/obj_det_view_node/build/detect_subscriber -- -j4 -l4

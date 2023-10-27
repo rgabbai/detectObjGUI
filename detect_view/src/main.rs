@@ -76,7 +76,7 @@ fn main() -> Result<(), eframe::Error> {
 
     env_logger::init(); // Log to stderr (if you run with `RUST_LOG=debug`).
     let options = eframe::NativeOptions {
-        initial_window_size: Some(egui::vec2(800.0, 600.0)),
+        initial_window_size: Some(egui::vec2(1000.0, 700.0)),
         resizable: false,
         ..Default::default()
     };
@@ -135,16 +135,17 @@ impl eframe::App for MyApp {
             ui.label(format!("From '{}', Object {}", self.name, self.item));
 
             ui.image(egui::include_image!(
-                "/home/rgabbai/projects/Rust/cam_det_pub_node/image_family1.jpg"
+                "/home/rgabbai/projects/Rust/cam_det_pub_node/image.jpg"
             ));
 
             // Draw a square box on top of the image based on detected objects 
             //let dboxes: Vec<DetObj> = get_detected_objs(self.response_rx.clone());
             let mut prev_dboxes: Vec<DetObj> = Vec::new();
-            prev_dboxes.push(DetObj {
-                box_location: BoxCor(470.0, 220.0, 50.0, 180.0),
-                otype: "person1".to_string(),
-            });
+            //prev_dboxes.push(DetObj {
+            //    box_location: BoxCor(470.0, 220.0, 50.0, 180.0),
+            //    otype: "person1".to_string(),
+            //    prob: 0.9,
+            //});
             let mut dboxes: Vec<DetObj> = get_detected_objs(self.shared_data.clone());
             if dboxes.is_empty() {
                 // Do something if dboxes is empty
@@ -152,7 +153,7 @@ impl eframe::App for MyApp {
                 dboxes = self.prev_objects.clone();
             } else {
                 // Do something if dboxes is not empty
-                println!("Detected objects: {:?}", dboxes);
+                //println!("Detected objects: {:?}", dboxes);
                 self.prev_objects = dboxes.clone();
             }
             // Iterate over all detected objects
@@ -160,6 +161,10 @@ impl eframe::App for MyApp {
             for dbox in dboxes {
                 //println!("> Recive dbox: {:?}",dbox);
                 let BoxCor(x,y,width,height) = dbox.box_location;
+                // Change ratio aspect back to original picture..
+                //let x = x/1.77;
+                let height = height/1.77; 
+
                 let box_type = &dbox.otype;
                 let box_rect = Rect::from_min_size(pos2(x, y), vec2(width, height)); // Example coordinates and size
                 println!("> box_type: {:?} box_rect {:?}",box_type,box_rect);
@@ -196,6 +201,7 @@ struct BoxCor(f32,f32,f32,f32);
 struct DetObj {
     box_location: BoxCor,
     otype: String,
+    prob: f32,
 }
 
 fn get_detected_objs(shared_data: Arc<Mutex<Vec<String>>>) -> Vec<DetObj> {
@@ -244,6 +250,7 @@ fn parse_to_det_obj(data: &str) -> Result<DetObj,ParseError> {
         Ok(DetObj {
             box_location: BoxCor(470.0, 220.0, 50.0, 180.0), // Replace with actual parsed values
             otype: "person1".to_string(), // Replace with actual parsed values
+            prob: 0.9,
         })
     } else {
         Err(ParseError::InvalidFormat)

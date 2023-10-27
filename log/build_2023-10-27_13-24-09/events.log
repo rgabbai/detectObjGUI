@@ -1,0 +1,91 @@
+[0.000000] (-) TimerEvent: {}
+[0.000428] (detect_subscriber) JobQueued: {'identifier': 'detect_subscriber', 'dependencies': OrderedDict()}
+[0.001042] (detect_subscriber) JobStarted: {'identifier': 'detect_subscriber'}
+[0.014374] (detect_subscriber) JobProgress: {'identifier': 'detect_subscriber', 'progress': 'cmake'}
+[0.015172] (detect_subscriber) JobProgress: {'identifier': 'detect_subscriber', 'progress': 'build'}
+[0.016145] (detect_subscriber) Command: {'cmd': ['/usr/local/bin/cmake', '--build', '/home/rgabbai/projects/Rust/obj_det_view_node/build/detect_subscriber', '--', '-j4', '-l4'], 'cwd': '/home/rgabbai/projects/Rust/obj_det_view_node/build/detect_subscriber', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_IL:en'), ('USER', 'rgabbai'), ('SSH_AGENT_PID', '2263'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib'), ('HOME', '/home/rgabbai'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '2084'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/rgabbai/projects/Rust/obj_det_view_node/install'), ('ROS_DISTRO', 'foxy'), ('LOGNAME', 'rgabbai'), ('JOURNAL_STREAM', '8:51917'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'rgabbai'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/foxy/bin:/home/rgabbai/.cargo/bin:/home/rgabbai/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/rgabbai-H87M-HD3:@/tmp/.ICE-unix/2305,unix/rgabbai-H87M-HD3:/tmp/.ICE-unix/2305'), ('INVOCATION_ID', '8afc07da20fe428ab04c842dec996990'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/901ebeda_81bb_4086_bda3_3e8d2d464d7b'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_IL'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.192'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber:/opt/ros/foxy'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/rgabbai/projects/Rust/obj_det_view_node/build/detect_subscriber'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/foxy/lib/python3.8/site-packages'), ('COLCON', '1'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber:/opt/ros/foxy')]), 'shell': False}
+[0.099705] (-) TimerEvent: {}
+[0.200256] (-) TimerEvent: {}
+[0.300635] (-) TimerEvent: {}
+[0.401069] (-) TimerEvent: {}
+[0.501781] (-) TimerEvent: {}
+[0.602220] (-) TimerEvent: {}
+[0.702811] (-) TimerEvent: {}
+[0.803387] (-) TimerEvent: {}
+[0.903847] (-) TimerEvent: {}
+[1.004502] (-) TimerEvent: {}
+[1.105141] (-) TimerEvent: {}
+[1.205609] (-) TimerEvent: {}
+[1.306079] (-) TimerEvent: {}
+[1.406634] (-) TimerEvent: {}
+[1.506976] (-) TimerEvent: {}
+[1.522540] (detect_subscriber) StderrLine: {'line': b'\x1b[0m\x1b[1m\x1b[33mwarning\x1b[0m\x1b[0m\x1b[1m: unused import: `Instant`\x1b[0m\n'}
+[1.522773] (detect_subscriber) StderrLine: {'line': b'\x1b[0m \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12m--> \x1b[0m\x1b[0mdetect_subscriber/src/main.rs:6:27\x1b[0m\n'}
+[1.522858] (detect_subscriber) StderrLine: {'line': b'\x1b[0m  \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12m|\x1b[0m\n'}
+[1.522934] (detect_subscriber) StderrLine: {'line': b'\x1b[0m\x1b[1m\x1b[38;5;12m6\x1b[0m\x1b[0m \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12m|\x1b[0m\x1b[0m \x1b[0m\x1b[0muse std::time::{Duration, Instant};\x1b[0m\n'}
+[1.523008] (detect_subscriber) StderrLine: {'line': b'\x1b[0m  \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12m| \x1b[0m\x1b[0m                          \x1b[0m\x1b[0m\x1b[1m\x1b[33m^^^^^^^\x1b[0m\n'}
+[1.523080] (detect_subscriber) StderrLine: {'line': b'\x1b[0m  \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12m|\x1b[0m\n'}
+[1.523151] (detect_subscriber) StderrLine: {'line': b'\x1b[0m  \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12m= \x1b[0m\x1b[0m\x1b[1mnote\x1b[0m\x1b[0m: `#[warn(unused_imports)]` on by default\x1b[0m\n'}
+[1.523220] (detect_subscriber) StderrLine: {'line': b'\n'}
+[1.573693] (detect_subscriber) StderrLine: {'line': b'\x1b[0m\x1b[1m\x1b[33mwarning\x1b[0m\x1b[0m\x1b[1m: unused variable: `random_x`\x1b[0m\n'}
+[1.573899] (detect_subscriber) StderrLine: {'line': b'\x1b[0m  \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12m--> \x1b[0m\x1b[0mdetect_subscriber/src/main.rs:42:13\x1b[0m\n'}
+[1.573981] (detect_subscriber) StderrLine: {'line': b'\x1b[0m   \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12m|\x1b[0m\n'}
+[1.574058] (detect_subscriber) StderrLine: {'line': b'\x1b[0m\x1b[1m\x1b[38;5;12m42\x1b[0m\x1b[0m \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12m|\x1b[0m\x1b[0m \x1b[0m\x1b[0m        let random_x: f32 = rng.gen_range(100.0..=700.0);\x1b[0m\n'}
+[1.574134] (detect_subscriber) StderrLine: {'line': b'\x1b[0m   \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12m| \x1b[0m\x1b[0m            \x1b[0m\x1b[0m\x1b[1m\x1b[33m^^^^^^^^\x1b[0m\x1b[0m \x1b[0m\x1b[0m\x1b[1m\x1b[33mhelp: if this is intentional, prefix it with an underscore: `_random_x`\x1b[0m\n'}
+[1.574207] (detect_subscriber) StderrLine: {'line': b'\x1b[0m   \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12m|\x1b[0m\n'}
+[1.574277] (detect_subscriber) StderrLine: {'line': b'\x1b[0m   \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12m= \x1b[0m\x1b[0m\x1b[1mnote\x1b[0m\x1b[0m: `#[warn(unused_variables)]` on by default\x1b[0m\n'}
+[1.574347] (detect_subscriber) StderrLine: {'line': b'\n'}
+[1.574417] (detect_subscriber) StderrLine: {'line': b'\x1b[0m\x1b[1m\x1b[33mwarning\x1b[0m\x1b[0m\x1b[1m: unused variable: `random_y`\x1b[0m\n'}
+[1.574486] (detect_subscriber) StderrLine: {'line': b'\x1b[0m  \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12m--> \x1b[0m\x1b[0mdetect_subscriber/src/main.rs:43:13\x1b[0m\n'}
+[1.574556] (detect_subscriber) StderrLine: {'line': b'\x1b[0m   \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12m|\x1b[0m\n'}
+[1.574633] (detect_subscriber) StderrLine: {'line': b'\x1b[0m\x1b[1m\x1b[38;5;12m43\x1b[0m\x1b[0m \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12m|\x1b[0m\x1b[0m \x1b[0m\x1b[0m        let random_y: f32 = rng.gen_range(100.0..=500.0);\x1b[0m\n'}
+[1.574703] (detect_subscriber) StderrLine: {'line': b'\x1b[0m   \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12m| \x1b[0m\x1b[0m            \x1b[0m\x1b[0m\x1b[1m\x1b[33m^^^^^^^^\x1b[0m\x1b[0m \x1b[0m\x1b[0m\x1b[1m\x1b[33mhelp: if this is intentional, prefix it with an underscore: `_random_y`\x1b[0m\n'}
+[1.574774] (detect_subscriber) StderrLine: {'line': b'\n'}
+[1.579571] (detect_subscriber) StderrLine: {'line': b'\x1b[0m\x1b[1m\x1b[38;5;9merror[E0373]\x1b[0m\x1b[0m\x1b[1m: closure may outlive the current function, but it borrows `shared_detected_objects_clone`, which is owned by the current function\x1b[0m\n'}
+[1.579787] (detect_subscriber) StderrLine: {'line': b'\x1b[0m   \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12m--> \x1b[0m\x1b[0mdetect_subscriber/src/main.rs:103:35\x1b[0m\n'}
+[1.579886] (detect_subscriber) StderrLine: {'line': b'\x1b[0m    \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12m|\x1b[0m\n'}
+[1.579962] (detect_subscriber) StderrLine: {'line': b'\x1b[0m\x1b[1m\x1b[38;5;12m103\x1b[0m\x1b[0m \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12m|\x1b[0m\x1b[0m \x1b[0m\x1b[0m                    thread::spawn(|| handle_client(stream,shared_detected_objects_clone.clone()));\x1b[0m\n'}
+[1.580038] (detect_subscriber) StderrLine: {'line': b'\x1b[0m    \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12m| \x1b[0m\x1b[0m                                  \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;9m^^\x1b[0m\x1b[0m                      \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12m-----------------------------\x1b[0m\x1b[0m \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12m`shared_detected_objects_clone` is borrowed here\x1b[0m\n'}
+[1.580115] (detect_subscriber) StderrLine: {'line': b'\x1b[0m    \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12m| \x1b[0m\x1b[0m                                  \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;9m|\x1b[0m\n'}
+[1.580184] (detect_subscriber) StderrLine: {'line': b'\x1b[0m    \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12m| \x1b[0m\x1b[0m                                  \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;9mmay outlive borrowed value `shared_detected_objects_clone`\x1b[0m\n'}
+[1.580270] (detect_subscriber) StderrLine: {'line': b'\x1b[0m    \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12m|\x1b[0m\n'}
+[1.580339] (detect_subscriber) StderrLine: {'line': b"\x1b[0m\x1b[1m\x1b[38;5;10mnote\x1b[0m\x1b[0m: function requires argument type to outlive `'static`\x1b[0m\n"}
+[1.580423] (detect_subscriber) StderrLine: {'line': b'\x1b[0m   \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12m--> \x1b[0m\x1b[0mdetect_subscriber/src/main.rs:103:21\x1b[0m\n'}
+[1.580505] (detect_subscriber) StderrLine: {'line': b'\x1b[0m    \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12m|\x1b[0m\n'}
+[1.580574] (detect_subscriber) StderrLine: {'line': b'\x1b[0m\x1b[1m\x1b[38;5;12m103\x1b[0m\x1b[0m \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12m|\x1b[0m\x1b[0m \x1b[0m\x1b[0m                    thread::spawn(|| handle_client(stream,shared_detected_objects_clone.clone()));\x1b[0m\n'}
+[1.580645] (detect_subscriber) StderrLine: {'line': b'\x1b[0m    \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12m| \x1b[0m\x1b[0m                    \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;10m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\x1b[0m\n'}
+[1.580729] (detect_subscriber) StderrLine: {'line': b'\x1b[0m\x1b[1m\x1b[38;5;14mhelp\x1b[0m\x1b[0m: to force the closure to take ownership of `shared_detected_objects_clone` (and any other referenced variables), use the `move` keyword\x1b[0m\n'}
+[1.580812] (detect_subscriber) StderrLine: {'line': b'\x1b[0m    \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12m|\x1b[0m\n'}
+[1.580883] (detect_subscriber) StderrLine: {'line': b'\x1b[0m\x1b[1m\x1b[38;5;12m103\x1b[0m\x1b[0m \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12m| \x1b[0m\x1b[0m                    thread::spawn(\x1b[0m\x1b[0m\x1b[38;5;10mmove \x1b[0m\x1b[0m|| handle_client(stream,shared_detected_objects_clone.clone()));\x1b[0m\n'}
+[1.580961] (detect_subscriber) StderrLine: {'line': b'\x1b[0m    \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12m|\x1b[0m\x1b[0m                                   \x1b[0m\x1b[0m\x1b[38;5;10m++++\x1b[0m\n'}
+[1.581057] (detect_subscriber) StderrLine: {'line': b'\n'}
+[1.587447] (detect_subscriber) StderrLine: {'line': b'\x1b[0m\x1b[1m\x1b[38;5;9merror[E0382]\x1b[0m\x1b[0m\x1b[1m: use of moved value: `shared_detected_objects_clone`\x1b[0m\n'}
+[1.587672] (detect_subscriber) StderrLine: {'line': b'\x1b[0m   \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12m--> \x1b[0m\x1b[0mdetect_subscriber/src/main.rs:124:9\x1b[0m\n'}
+[1.587757] (detect_subscriber) StderrLine: {'line': b'\x1b[0m    \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12m|\x1b[0m\n'}
+[1.587835] (detect_subscriber) StderrLine: {'line': b'\x1b[0m\x1b[1m\x1b[38;5;12m90\x1b[0m\x1b[0m  \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12m|\x1b[0m\x1b[0m \x1b[0m\x1b[0m    let shared_detected_objects_clone = Arc::clone(&shared_detected_objects);\x1b[0m\n'}
+[1.587908] (detect_subscriber) StderrLine: {'line': b'\x1b[0m    \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12m| \x1b[0m\x1b[0m        \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12m-----------------------------\x1b[0m\x1b[0m \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12mmove occurs because `shared_detected_objects_clone` has type `Arc<std::sync::Mutex<Vec<DetObj>>>`, which does not implement the `Copy` trait\x1b[0m\n'}
+[1.587997] (detect_subscriber) StderrLine: {'line': b'\x1b[0m\x1b[1m\x1b[38;5;12m...\x1b[0m\n'}
+[1.588069] (detect_subscriber) StderrLine: {'line': b'\x1b[0m\x1b[1m\x1b[38;5;12m96\x1b[0m\x1b[0m  \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12m|\x1b[0m\x1b[0m \x1b[0m\x1b[0m    thread::spawn(move || {\x1b[0m\n'}
+[1.588140] (detect_subscriber) StderrLine: {'line': b'\x1b[0m    \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12m| \x1b[0m\x1b[0m                  \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12m-------\x1b[0m\x1b[0m \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12mvalue moved into closure here\x1b[0m\n'}
+[1.588210] (detect_subscriber) StderrLine: {'line': b'\x1b[0m\x1b[1m\x1b[38;5;12m...\x1b[0m\n'}
+[1.588279] (detect_subscriber) StderrLine: {'line': b'\x1b[0m\x1b[1m\x1b[38;5;12m103\x1b[0m\x1b[0m \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12m|\x1b[0m\x1b[0m \x1b[0m\x1b[0m                    thread::spawn(|| handle_client(stream,shared_detected_objects_clone.clone()));\x1b[0m\n'}
+[1.588349] (detect_subscriber) StderrLine: {'line': b'\x1b[0m    \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12m| \x1b[0m\x1b[0m                                                          \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12m-----------------------------\x1b[0m\x1b[0m \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12mvariable moved due to use in closure\x1b[0m\n'}
+[1.588420] (detect_subscriber) StderrLine: {'line': b'\x1b[0m\x1b[1m\x1b[38;5;12m...\x1b[0m\n'}
+[1.588489] (detect_subscriber) StderrLine: {'line': b'\x1b[0m\x1b[1m\x1b[38;5;12m124\x1b[0m\x1b[0m \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12m|\x1b[0m\x1b[0m \x1b[0m\x1b[0m        move |msg: Arc<String_>| {\x1b[0m\n'}
+[1.588559] (detect_subscriber) StderrLine: {'line': b'\x1b[0m    \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12m| \x1b[0m\x1b[0m        \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;9m^^^^^^^^^^^^^^^^^^^^^^^^\x1b[0m\x1b[0m \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;9mvalue used here after move\x1b[0m\n'}
+[1.588629] (detect_subscriber) StderrLine: {'line': b'\x1b[0m\x1b[1m\x1b[38;5;12m...\x1b[0m\n'}
+[1.588697] (detect_subscriber) StderrLine: {'line': b'\x1b[0m\x1b[1m\x1b[38;5;12m132\x1b[0m\x1b[0m \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12m|\x1b[0m\x1b[0m \x1b[0m\x1b[0m                    let mut shared_data = shared_detected_objects_clone.lock().unwrap();\x1b[0m\n'}
+[1.588767] (detect_subscriber) StderrLine: {'line': b'\x1b[0m    \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12m| \x1b[0m\x1b[0m                                          \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12m-----------------------------\x1b[0m\x1b[0m \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12muse occurs due to use in closure\x1b[0m\n'}
+[1.588835] (detect_subscriber) StderrLine: {'line': b'\n'}
+[1.599656] (detect_subscriber) StderrLine: {'line': b'\x1b[0m\x1b[1mSome errors have detailed explanations: E0373, E0382.\x1b[0m\n'}
+[1.599922] (detect_subscriber) StderrLine: {'line': b'\x1b[0m\x1b[1mFor more information about an error, try `rustc --explain E0373`.\x1b[0m\n'}
+[1.604785] (detect_subscriber) StderrLine: {'line': b'\x1b[0m\x1b[0m\x1b[1m\x1b[31merror\x1b[0m\x1b[1m:\x1b[0m could not compile `detect_subscriber` (bin "detect_subscriber") due to 2 previous errors; 3 warnings emitted\n'}
+[1.607062] (-) TimerEvent: {}
+[1.612876] (detect_subscriber) StderrLine: {'line': b'\x1b[0m\x1b[0m\x1b[1m\x1b[31merror\x1b[0m\x1b[1m:\x1b[0m failed to compile `detect_subscriber v0.1.0 (/home/rgabbai/projects/Rust/obj_det_view_node/detect_subscriber)`, intermediate artifacts can be found at `/home/rgabbai/projects/Rust/obj_det_view_node/build/detect_subscriber/target`.\n'}
+[1.613098] (detect_subscriber) StderrLine: {'line': b'To reuse those artifacts with a future compilation, set the environment variable `CARGO_TARGET_DIR` to that path.\n'}
+[1.615295] (detect_subscriber) StderrLine: {'line': b'make[2]: *** [CMakeFiles/detect_subscriber.dir/build.make:70: CMakeFiles/detect_subscriber] Error 101\n'}
+[1.615738] (detect_subscriber) StderrLine: {'line': b'make[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/detect_subscriber.dir/all] Error 2\n'}
+[1.615840] (detect_subscriber) StderrLine: {'line': b'make: *** [Makefile:146: all] Error 2\n'}
+[1.621252] (detect_subscriber) CommandEnded: {'returncode': 2}
+[1.691285] (detect_subscriber) JobEnded: {'identifier': 'detect_subscriber', 'rc': 2}
+[1.702281] (-) EventReactorShutdown: {}

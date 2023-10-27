@@ -1,0 +1,35 @@
+-- The C compiler identification is GNU 9.4.0
+-- The CXX compiler identification is GNU 9.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 0.9.12 (/opt/ros/foxy/share/ament_cmake/cmake)
+-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+-- Using PYTHON_EXECUTABLE: /usr/bin/python3
+-- Configuring done (1.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/rgabbai/projects/Rust/obj_det_view_node/build/detect_subscriber
+Built target detect_subscriber
+-- Install configuration: ""
+-- Installing: /home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/ament_index/resource_index/package_run_dependencies/detect_subscriber
+-- Installing: /home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/ament_index/resource_index/parent_prefix_path/detect_subscriber
+-- Installing: /home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/detect_subscriber/environment/ament_prefix_path.sh
+-- Installing: /home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/detect_subscriber/environment/ament_prefix_path.dsv
+-- Installing: /home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/detect_subscriber/environment/path.sh
+-- Installing: /home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/detect_subscriber/environment/path.dsv
+-- Installing: /home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/detect_subscriber/local_setup.bash
+-- Installing: /home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/detect_subscriber/local_setup.sh
+-- Installing: /home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/detect_subscriber/local_setup.zsh
+-- Installing: /home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/detect_subscriber/local_setup.dsv
+-- Installing: /home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/detect_subscriber/package.dsv
+-- Installing: /home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/ament_index/resource_index/packages/detect_subscriber
+-- Installing: /home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/detect_subscriber/cmake/detect_subscriberConfig.cmake
+-- Installing: /home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/detect_subscriber/cmake/detect_subscriberConfig-version.cmake
+-- Installing: /home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/detect_subscriber/package.xml

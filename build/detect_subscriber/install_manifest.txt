@@ -1,0 +1,15 @@
+/home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/ament_index/resource_index/package_run_dependencies/detect_subscriber
+/home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/ament_index/resource_index/parent_prefix_path/detect_subscriber
+/home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/detect_subscriber/environment/ament_prefix_path.sh
+/home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/detect_subscriber/environment/ament_prefix_path.dsv
+/home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/detect_subscriber/environment/path.sh
+/home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/detect_subscriber/environment/path.dsv
+/home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/detect_subscriber/local_setup.bash
+/home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/detect_subscriber/local_setup.sh
+/home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/detect_subscriber/local_setup.zsh
+/home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/detect_subscriber/local_setup.dsv
+/home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/detect_subscriber/package.dsv
+/home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/ament_index/resource_index/packages/detect_subscriber
+/home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/detect_subscriber/cmake/detect_subscriberConfig.cmake
+/home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/detect_subscriber/cmake/detect_subscriberConfig-version.cmake
+/home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/detect_subscriber/package.xml

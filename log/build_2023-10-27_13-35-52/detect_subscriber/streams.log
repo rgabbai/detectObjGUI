@@ -1,0 +1,43 @@
+[0.018s] Invoking command in '/home/rgabbai/projects/Rust/obj_det_view_node/build/detect_subscriber': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/local/bin/cmake --build /home/rgabbai/projects/Rust/obj_det_view_node/build/detect_subscriber -- -j4 -l4
+[1.514s] [0m[1m[33mwarning[0m[0m[1m: unused import: `Instant`[0m
+[1.514s] [0m [0m[0m[1m[38;5;12m--> [0m[0mdetect_subscriber/src/main.rs:6:27[0m
+[1.514s] [0m  [0m[0m[1m[38;5;12m|[0m
+[1.515s] [0m[1m[38;5;12m6[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0muse std::time::{Duration, Instant};[0m
+[1.515s] [0m  [0m[0m[1m[38;5;12m| [0m[0m                          [0m[0m[1m[33m^^^^^^^[0m
+[1.515s] [0m  [0m[0m[1m[38;5;12m|[0m
+[1.515s] [0m  [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: `#[warn(unused_imports)]` on by default[0m
+[1.515s] 
+[1.602s] [0m[1m[33mwarning[0m[0m[1m: unused variable: `random_x`[0m
+[1.602s] [0m  [0m[0m[1m[38;5;12m--> [0m[0mdetect_subscriber/src/main.rs:44:13[0m
+[1.602s] [0m   [0m[0m[1m[38;5;12m|[0m
+[1.602s] [0m[1m[38;5;12m44[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m        let random_x: f32 = rng.gen_range(100.0..=700.0);[0m
+[1.602s] [0m   [0m[0m[1m[38;5;12m| [0m[0m            [0m[0m[1m[33m^^^^^^^^[0m[0m [0m[0m[1m[33mhelp: if this is intentional, prefix it with an underscore: `_random_x`[0m
+[1.603s] [0m   [0m[0m[1m[38;5;12m|[0m
+[1.603s] [0m   [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: `#[warn(unused_variables)]` on by default[0m
+[1.603s] 
+[1.603s] [0m[1m[33mwarning[0m[0m[1m: unused variable: `random_y`[0m
+[1.603s] [0m  [0m[0m[1m[38;5;12m--> [0m[0mdetect_subscriber/src/main.rs:45:13[0m
+[1.603s] [0m   [0m[0m[1m[38;5;12m|[0m
+[1.603s] [0m[1m[38;5;12m45[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m        let random_y: f32 = rng.gen_range(100.0..=500.0);[0m
+[1.603s] [0m   [0m[0m[1m[38;5;12m| [0m[0m            [0m[0m[1m[33m^^^^^^^^[0m[0m [0m[0m[1m[33mhelp: if this is intentional, prefix it with an underscore: `_random_y`[0m
+[1.603s] 
+[3.830s] Built target detect_subscriber
+[3.839s] Invoked command in '/home/rgabbai/projects/Rust/obj_det_view_node/build/detect_subscriber' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/local/bin/cmake --build /home/rgabbai/projects/Rust/obj_det_view_node/build/detect_subscriber -- -j4 -l4
+[3.925s] Invoking command in '/home/rgabbai/projects/Rust/obj_det_view_node/build/detect_subscriber': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/local/bin/cmake --install /home/rgabbai/projects/Rust/obj_det_view_node/build/detect_subscriber
+[3.954s] -- Install configuration: ""
+[3.954s] -- Up-to-date: /home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/ament_index/resource_index/package_run_dependencies/detect_subscriber
+[3.954s] -- Up-to-date: /home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/ament_index/resource_index/parent_prefix_path/detect_subscriber
+[3.954s] -- Up-to-date: /home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/detect_subscriber/environment/ament_prefix_path.sh
+[3.955s] -- Up-to-date: /home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/detect_subscriber/environment/ament_prefix_path.dsv
+[3.955s] -- Up-to-date: /home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/detect_subscriber/environment/path.sh
+[3.955s] -- Up-to-date: /home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/detect_subscriber/environment/path.dsv
+[3.955s] -- Up-to-date: /home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/detect_subscriber/local_setup.bash
+[3.955s] -- Up-to-date: /home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/detect_subscriber/local_setup.sh
+[3.955s] -- Up-to-date: /home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/detect_subscriber/local_setup.zsh
+[3.955s] -- Up-to-date: /home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/detect_subscriber/local_setup.dsv
+[3.955s] -- Installing: /home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/detect_subscriber/package.dsv
+[3.955s] -- Up-to-date: /home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/ament_index/resource_index/packages/detect_subscriber
+[3.955s] -- Up-to-date: /home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/detect_subscriber/cmake/detect_subscriberConfig.cmake
+[3.955s] -- Up-to-date: /home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/detect_subscriber/cmake/detect_subscriberConfig-version.cmake
+[3.955s] -- Up-to-date: /home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/detect_subscriber/package.xml
+[3.961s] Invoked command in '/home/rgabbai/projects/Rust/obj_det_view_node/build/detect_subscriber' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/local/bin/cmake --install /home/rgabbai/projects/Rust/obj_det_view_node/build/detect_subscriber

@@ -1,0 +1,187 @@
+[0.000000] (-) TimerEvent: {}
+[0.000436] (detect_subscriber) JobQueued: {'identifier': 'detect_subscriber', 'dependencies': OrderedDict()}
+[0.001155] (detect_subscriber) JobStarted: {'identifier': 'detect_subscriber'}
+[0.015466] (detect_subscriber) JobProgress: {'identifier': 'detect_subscriber', 'progress': 'cmake'}
+[0.016305] (detect_subscriber) JobProgress: {'identifier': 'detect_subscriber', 'progress': 'build'}
+[0.017115] (detect_subscriber) Command: {'cmd': ['/usr/local/bin/cmake', '--build', '/home/rgabbai/projects/Rust/obj_det_view_node/build/detect_subscriber', '--', '-j4', '-l4'], 'cwd': '/home/rgabbai/projects/Rust/obj_det_view_node/build/detect_subscriber', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_IL:en'), ('USER', 'rgabbai'), ('SSH_AGENT_PID', '2263'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib'), ('HOME', '/home/rgabbai'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '2084'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/rgabbai/projects/Rust/obj_det_view_node/install'), ('ROS_DISTRO', 'foxy'), ('LOGNAME', 'rgabbai'), ('JOURNAL_STREAM', '8:51917'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'rgabbai'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/foxy/bin:/home/rgabbai/.cargo/bin:/home/rgabbai/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/rgabbai-H87M-HD3:@/tmp/.ICE-unix/2305,unix/rgabbai-H87M-HD3:/tmp/.ICE-unix/2305'), ('INVOCATION_ID', '8afc07da20fe428ab04c842dec996990'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/901ebeda_81bb_4086_bda3_3e8d2d464d7b'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_IL'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.192'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber:/opt/ros/foxy'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/rgabbai/projects/Rust/obj_det_view_node/build/detect_subscriber'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/foxy/lib/python3.8/site-packages'), ('COLCON', '1'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber:/opt/ros/foxy')]), 'shell': False}
+[0.073280] (detect_subscriber) StdoutLine: {'line': b'-- Found ament_cmake: 0.9.12 (/opt/ros/foxy/share/ament_cmake/cmake)\n'}
+[0.079127] (detect_subscriber) StderrLine: {'line': b'\x1b[33mCMake Warning (dev) at /opt/ros/foxy/share/ament_cmake_core/cmake/core/python.cmake:22 (find_package):\n'}
+[0.079347] (detect_subscriber) StderrLine: {'line': b'  Policy CMP0148 is not set: The FindPythonInterp and FindPythonLibs modules\n'}
+[0.079433] (detect_subscriber) StderrLine: {'line': b'  are removed.  Run "cmake --help-policy CMP0148" for policy details.  Use\n'}
+[0.079510] (detect_subscriber) StderrLine: {'line': b'  the cmake_policy command to set the policy and suppress this warning.\n'}
+[0.079584] (detect_subscriber) StderrLine: {'line': b'\n'}
+[0.079655] (detect_subscriber) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[0.079727] (detect_subscriber) StderrLine: {'line': b'  /opt/ros/foxy/share/ament_cmake_core/cmake/core/all.cmake:53 (include)\n'}
+[0.079796] (detect_subscriber) StderrLine: {'line': b'  /opt/ros/foxy/share/ament_cmake_core/cmake/ament_cmake_core-extras.cmake:17 (include)\n'}
+[0.079868] (detect_subscriber) StderrLine: {'line': b'  /opt/ros/foxy/share/ament_cmake_core/cmake/ament_cmake_coreConfig.cmake:41 (include)\n'}
+[0.079938] (detect_subscriber) StderrLine: {'line': b'  /opt/ros/foxy/share/ament_cmake/cmake/ament_cmake_export_dependencies-extras.cmake:15 (find_package)\n'}
+[0.080009] (detect_subscriber) StderrLine: {'line': b'  /opt/ros/foxy/share/ament_cmake/cmake/ament_cmakeConfig.cmake:41 (include)\n'}
+[0.080078] (detect_subscriber) StderrLine: {'line': b'  CMakeLists.txt:4 (find_package)\n'}
+[0.080147] (detect_subscriber) StderrLine: {'line': b'This warning is for project developers.  Use -Wno-dev to suppress it.\n'}
+[0.080217] (detect_subscriber) StderrLine: {'line': b'\x1b[0m\n'}
+[0.094993] (detect_subscriber) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[0.099701] (-) TimerEvent: {}
+[0.200020] (-) TimerEvent: {}
+[0.300330] (-) TimerEvent: {}
+[0.375256] (detect_subscriber) StdoutLine: {'line': b'-- Configuring done (0.3s)\n'}
+[0.379216] (detect_subscriber) StdoutLine: {'line': b'-- Generating done (0.0s)\n'}
+[0.380840] (detect_subscriber) StdoutLine: {'line': b'-- Build files have been written to: /home/rgabbai/projects/Rust/obj_det_view_node/build/detect_subscriber\n'}
+[0.400455] (-) TimerEvent: {}
+[0.500851] (-) TimerEvent: {}
+[0.601439] (-) TimerEvent: {}
+[0.701769] (-) TimerEvent: {}
+[0.802171] (-) TimerEvent: {}
+[0.902733] (-) TimerEvent: {}
+[1.003145] (-) TimerEvent: {}
+[1.103630] (-) TimerEvent: {}
+[1.204035] (-) TimerEvent: {}
+[1.304579] (-) TimerEvent: {}
+[1.405325] (-) TimerEvent: {}
+[1.505695] (-) TimerEvent: {}
+[1.606115] (-) TimerEvent: {}
+[1.706691] (-) TimerEvent: {}
+[1.807249] (-) TimerEvent: {}
+[1.907593] (-) TimerEvent: {}
+[2.007961] (-) TimerEvent: {}
+[2.108285] (-) TimerEvent: {}
+[2.208639] (-) TimerEvent: {}
+[2.308975] (-) TimerEvent: {}
+[2.409312] (-) TimerEvent: {}
+[2.509661] (-) TimerEvent: {}
+[2.610137] (-) TimerEvent: {}
+[2.710504] (-) TimerEvent: {}
+[2.810848] (-) TimerEvent: {}
+[2.911183] (-) TimerEvent: {}
+[3.011514] (-) TimerEvent: {}
+[3.111834] (-) TimerEvent: {}
+[3.212185] (-) TimerEvent: {}
+[3.312502] (-) TimerEvent: {}
+[3.412830] (-) TimerEvent: {}
+[3.513178] (-) TimerEvent: {}
+[3.613538] (-) TimerEvent: {}
+[3.713881] (-) TimerEvent: {}
+[3.814233] (-) TimerEvent: {}
+[3.914583] (-) TimerEvent: {}
+[4.014927] (-) TimerEvent: {}
+[4.115305] (-) TimerEvent: {}
+[4.215645] (-) TimerEvent: {}
+[4.315996] (-) TimerEvent: {}
+[4.416354] (-) TimerEvent: {}
+[4.516747] (-) TimerEvent: {}
+[4.617079] (-) TimerEvent: {}
+[4.717422] (-) TimerEvent: {}
+[4.817929] (-) TimerEvent: {}
+[4.918491] (-) TimerEvent: {}
+[5.019180] (-) TimerEvent: {}
+[5.119763] (-) TimerEvent: {}
+[5.220312] (-) TimerEvent: {}
+[5.320816] (-) TimerEvent: {}
+[5.421269] (-) TimerEvent: {}
+[5.521741] (-) TimerEvent: {}
+[5.622213] (-) TimerEvent: {}
+[5.725100] (-) TimerEvent: {}
+[5.825711] (-) TimerEvent: {}
+[5.926300] (-) TimerEvent: {}
+[6.026894] (-) TimerEvent: {}
+[6.127488] (-) TimerEvent: {}
+[6.228107] (-) TimerEvent: {}
+[6.328757] (-) TimerEvent: {}
+[6.429403] (-) TimerEvent: {}
+[6.529925] (-) TimerEvent: {}
+[6.630592] (-) TimerEvent: {}
+[6.731114] (-) TimerEvent: {}
+[6.831627] (-) TimerEvent: {}
+[6.932143] (-) TimerEvent: {}
+[7.032737] (-) TimerEvent: {}
+[7.133329] (-) TimerEvent: {}
+[7.233913] (-) TimerEvent: {}
+[7.334397] (-) TimerEvent: {}
+[7.434912] (-) TimerEvent: {}
+[7.535440] (-) TimerEvent: {}
+[7.635978] (-) TimerEvent: {}
+[7.736670] (-) TimerEvent: {}
+[7.837252] (-) TimerEvent: {}
+[7.937848] (-) TimerEvent: {}
+[8.038462] (-) TimerEvent: {}
+[8.139052] (-) TimerEvent: {}
+[8.239534] (-) TimerEvent: {}
+[8.340183] (-) TimerEvent: {}
+[8.440869] (-) TimerEvent: {}
+[8.541492] (-) TimerEvent: {}
+[8.642189] (-) TimerEvent: {}
+[8.742787] (-) TimerEvent: {}
+[8.843384] (-) TimerEvent: {}
+[8.943984] (-) TimerEvent: {}
+[9.044574] (-) TimerEvent: {}
+[9.145177] (-) TimerEvent: {}
+[9.245808] (-) TimerEvent: {}
+[9.346452] (-) TimerEvent: {}
+[9.447066] (-) TimerEvent: {}
+[9.547691] (-) TimerEvent: {}
+[9.648316] (-) TimerEvent: {}
+[9.748912] (-) TimerEvent: {}
+[9.849514] (-) TimerEvent: {}
+[9.950237] (-) TimerEvent: {}
+[10.056497] (-) TimerEvent: {}
+[10.156842] (-) TimerEvent: {}
+[10.257184] (-) TimerEvent: {}
+[10.357709] (-) TimerEvent: {}
+[10.458315] (-) TimerEvent: {}
+[10.558898] (-) TimerEvent: {}
+[10.659492] (-) TimerEvent: {}
+[10.760133] (-) TimerEvent: {}
+[10.860802] (-) TimerEvent: {}
+[10.961396] (-) TimerEvent: {}
+[11.056505] (detect_subscriber) StderrLine: {'line': b'\x1b[0m\x1b[1m\x1b[33mwarning\x1b[0m\x1b[0m\x1b[1m: unused import: `Instant`\x1b[0m\n'}
+[11.056701] (detect_subscriber) StderrLine: {'line': b'\x1b[0m \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12m--> \x1b[0m\x1b[0mdetect_subscriber/src/main.rs:6:27\x1b[0m\n'}
+[11.056784] (detect_subscriber) StderrLine: {'line': b'\x1b[0m  \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12m|\x1b[0m\n'}
+[11.056860] (detect_subscriber) StderrLine: {'line': b'\x1b[0m\x1b[1m\x1b[38;5;12m6\x1b[0m\x1b[0m \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12m|\x1b[0m\x1b[0m \x1b[0m\x1b[0muse std::time::{Duration, Instant};\x1b[0m\n'}
+[11.056939] (detect_subscriber) StderrLine: {'line': b'\x1b[0m  \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12m| \x1b[0m\x1b[0m                          \x1b[0m\x1b[0m\x1b[1m\x1b[33m^^^^^^^\x1b[0m\n'}
+[11.057011] (detect_subscriber) StderrLine: {'line': b'\x1b[0m  \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12m|\x1b[0m\n'}
+[11.057081] (detect_subscriber) StderrLine: {'line': b'\x1b[0m  \x1b[0m\x1b[0m\x1b[1m\x1b[38;5;12m= \x1b[0m\x1b[0m\x1b[1mnote\x1b[0m\x1b[0m: `#[warn(unused_imports)]` on by default\x1b[0m\n'}
+[11.057151] (detect_subscriber) StderrLine: {'line': b'\n'}
+[11.061497] (-) TimerEvent: {}
+[11.161828] (-) TimerEvent: {}
+[11.262148] (-) TimerEvent: {}
+[11.362508] (-) TimerEvent: {}
+[11.463021] (-) TimerEvent: {}
+[11.563650] (-) TimerEvent: {}
+[11.664092] (-) TimerEvent: {}
+[11.764442] (-) TimerEvent: {}
+[11.865025] (-) TimerEvent: {}
+[11.965509] (-) TimerEvent: {}
+[12.066007] (-) TimerEvent: {}
+[12.166354] (-) TimerEvent: {}
+[12.266690] (-) TimerEvent: {}
+[12.367053] (-) TimerEvent: {}
+[12.467579] (-) TimerEvent: {}
+[12.568207] (-) TimerEvent: {}
+[12.668579] (-) TimerEvent: {}
+[12.769065] (-) TimerEvent: {}
+[12.869541] (-) TimerEvent: {}
+[12.958212] (detect_subscriber) StdoutLine: {'line': b'Built target detect_subscriber\n'}
+[12.968689] (detect_subscriber) CommandEnded: {'returncode': 0}
+[12.971192] (-) TimerEvent: {}
+[13.018712] (detect_subscriber) JobProgress: {'identifier': 'detect_subscriber', 'progress': 'install'}
+[13.055509] (detect_subscriber) Command: {'cmd': ['/usr/local/bin/cmake', '--install', '/home/rgabbai/projects/Rust/obj_det_view_node/build/detect_subscriber'], 'cwd': '/home/rgabbai/projects/Rust/obj_det_view_node/build/detect_subscriber', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_IL:en'), ('USER', 'rgabbai'), ('SSH_AGENT_PID', '2263'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib'), ('HOME', '/home/rgabbai'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '2084'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/rgabbai/projects/Rust/obj_det_view_node/install'), ('ROS_DISTRO', 'foxy'), ('LOGNAME', 'rgabbai'), ('JOURNAL_STREAM', '8:51917'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'rgabbai'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/foxy/bin:/home/rgabbai/.cargo/bin:/home/rgabbai/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/rgabbai-H87M-HD3:@/tmp/.ICE-unix/2305,unix/rgabbai-H87M-HD3:/tmp/.ICE-unix/2305'), ('INVOCATION_ID', '8afc07da20fe428ab04c842dec996990'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/901ebeda_81bb_4086_bda3_3e8d2d464d7b'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_IL'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.192'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber:/opt/ros/foxy'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/rgabbai/projects/Rust/obj_det_view_node/build/detect_subscriber'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/foxy/lib/python3.8/site-packages'), ('COLCON', '1'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber:/opt/ros/foxy')]), 'shell': False}
+[13.071196] (-) TimerEvent: {}
+[13.086139] (detect_subscriber) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[13.086620] (detect_subscriber) StdoutLine: {'line': b'-- Up-to-date: /home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/ament_index/resource_index/package_run_dependencies/detect_subscriber\n'}
+[13.086779] (detect_subscriber) StdoutLine: {'line': b'-- Installing: /home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/ament_index/resource_index/parent_prefix_path/detect_subscriber\n'}
+[13.087000] (detect_subscriber) StdoutLine: {'line': b'-- Up-to-date: /home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/detect_subscriber/environment/ament_prefix_path.sh\n'}
+[13.087184] (detect_subscriber) StdoutLine: {'line': b'-- Installing: /home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/detect_subscriber/environment/ament_prefix_path.dsv\n'}
+[13.087279] (detect_subscriber) StdoutLine: {'line': b'-- Up-to-date: /home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/detect_subscriber/environment/path.sh\n'}
+[13.087395] (detect_subscriber) StdoutLine: {'line': b'-- Installing: /home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/detect_subscriber/environment/path.dsv\n'}
+[13.087503] (detect_subscriber) StdoutLine: {'line': b'-- Up-to-date: /home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/detect_subscriber/local_setup.bash\n'}
+[13.087639] (detect_subscriber) StdoutLine: {'line': b'-- Up-to-date: /home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/detect_subscriber/local_setup.sh\n'}
+[13.087720] (detect_subscriber) StdoutLine: {'line': b'-- Up-to-date: /home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/detect_subscriber/local_setup.zsh\n'}
+[13.087807] (detect_subscriber) StdoutLine: {'line': b'-- Installing: /home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/detect_subscriber/local_setup.dsv\n'}
+[13.087885] (detect_subscriber) StdoutLine: {'line': b'-- Installing: /home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/detect_subscriber/package.dsv\n'}
+[13.087962] (detect_subscriber) StdoutLine: {'line': b'-- Up-to-date: /home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/ament_index/resource_index/packages/detect_subscriber\n'}
+[13.088039] (detect_subscriber) StdoutLine: {'line': b'-- Up-to-date: /home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/detect_subscriber/cmake/detect_subscriberConfig.cmake\n'}
+[13.088115] (detect_subscriber) StdoutLine: {'line': b'-- Up-to-date: /home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/detect_subscriber/cmake/detect_subscriberConfig-version.cmake\n'}
+[13.088190] (detect_subscriber) StdoutLine: {'line': b'-- Installing: /home/rgabbai/projects/Rust/obj_det_view_node/install/detect_subscriber/share/detect_subscriber/package.xml\n'}
+[13.094258] (detect_subscriber) CommandEnded: {'returncode': 0}
+[13.171406] (-) TimerEvent: {}
+[13.177749] (detect_subscriber) JobEnded: {'identifier': 'detect_subscriber', 'rc': 0}
+[13.178678] (-) EventReactorShutdown: {}

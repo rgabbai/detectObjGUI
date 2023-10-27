@@ -1,0 +1,22 @@
+[0m[1m[33mwarning[0m[0m[1m: unused import: `Instant`[0m
+[0m [0m[0m[1m[38;5;12m--> [0m[0mdetect_subscriber/src/main.rs:6:27[0m
+[0m  [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m6[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0muse std::time::{Duration, Instant};[0m
+[0m  [0m[0m[1m[38;5;12m| [0m[0m                          [0m[0m[1m[33m^^^^^^^[0m
+[0m  [0m[0m[1m[38;5;12m|[0m
+[0m  [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: `#[warn(unused_imports)]` on by default[0m
+
+[0m[1m[33mwarning[0m[0m[1m: unused variable: `random_x`[0m
+[0m  [0m[0m[1m[38;5;12m--> [0m[0mdetect_subscriber/src/main.rs:44:13[0m
+[0m   [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m44[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m        let random_x: f32 = rng.gen_range(100.0..=700.0);[0m
+[0m   [0m[0m[1m[38;5;12m| [0m[0m            [0m[0m[1m[33m^^^^^^^^[0m[0m [0m[0m[1m[33mhelp: if this is intentional, prefix it with an underscore: `_random_x`[0m
+[0m   [0m[0m[1m[38;5;12m|[0m
+[0m   [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: `#[warn(unused_variables)]` on by default[0m
+
+[0m[1m[33mwarning[0m[0m[1m: unused variable: `random_y`[0m
+[0m  [0m[0m[1m[38;5;12m--> [0m[0mdetect_subscriber/src/main.rs:45:13[0m
+[0m   [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m45[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m        let random_y: f32 = rng.gen_range(100.0..=500.0);[0m
+[0m   [0m[0m[1m[38;5;12m| [0m[0m            [0m[0m[1m[33m^^^^^^^^[0m[0m [0m[0m[1m[33mhelp: if this is intentional, prefix it with an underscore: `_random_y`[0m
+
