@@ -3,14 +3,17 @@ use std::io::prelude::*;
 use std::thread;
 use serde::{Serialize, Deserialize};
 use serde_json;
-use std::time::{Duration, Instant};
-use rand::Rng; // Import the Rng trait
+use std::time::{Duration};
+//use rand::Rng; // Import the Rng trait
 
 // ROS Client Lib 
 use std::sync::Arc;
 
 use rclrust::{qos::QoSProfile, rclrust_info};
 use rclrust_msg::std_msgs::msg::String as String_;
+use rclrust_msg::sensor_msgs::msg::CompressedImage;
+//use chrono::Utc;
+
 
 use std::sync::Mutex; // to pass shared data between threads
 
@@ -18,6 +21,7 @@ use std::sync::Mutex; // to pass shared data between threads
 //Const sections
 const SOCKET_PATH: &str = "/tmp/robot/detect-socket";
 const TOPIC_NAME: &str = "detect";
+const IMAGE_TOPIC_NAME: &str = "Compressed_camera_image";
 
 
 #[derive(Serialize, Deserialize, Clone, Debug)]
@@ -40,9 +44,9 @@ fn handle_client(mut stream: UnixStream, shared_detected_objects: Arc<Mutex<Vec<
         let detected_objects = shared_detected_objects.lock().unwrap().clone();
 
         // Randomly generate the first value of BoxCor
-        let mut rng = rand::thread_rng();
-        let random_x: f32 = rng.gen_range(100.0..=700.0);
-        let random_y: f32 = rng.gen_range(100.0..=500.0);
+        //let mut rng = rand::thread_rng();
+        //let random_x: f32 = rng.gen_range(100.0..=700.0);
+        //let random_y: f32 = rng.gen_range(100.0..=500.0);
 
         // Create a vector of DetObj
         //let detected_objects = vec![
@@ -144,6 +148,20 @@ async fn main() -> anyhow::Result<()> {
         },
         &QoSProfile::default(),
     )?;
+
+    // Subscription for CompressedImage data
+    let _image_subscription = node.create_subscription(
+        IMAGE_TOPIC_NAME, // Change to your actual image topic name
+        move |msg: Arc<CompressedImage>| {
+            //let filename = format!("received_image_{}.jpg", Utc::now().timestamp_millis());
+            let filename = format!("received_image.jpg");
+            std::fs::write(&filename, &msg.data).expect("Failed to write image file");
+
+            println!("Received and saved an image as {}", filename);
+        },
+        &QoSProfile::default(),
+    )?;
+
 
     node.wait();
     

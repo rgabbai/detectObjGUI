@@ -1,5 +1,5 @@
 [package]
-name = "Detect_gui"
+name = "detect_gui"
 version = "0.1.0"
 authors = ["Rony Gabbai <rony.gabbai@gmail.com>"]
 license = "MIT OR Apache-2.0"
@@ -22,3 +22,4 @@ image = { version = "0.24", default-features = false, features = [
 env_logger = "0.10"
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
+notify = "5.0"
