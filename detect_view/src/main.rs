@@ -250,18 +250,10 @@ impl eframe::App for MyApp {
 
             let mut dboxes: Vec<DetObj> = get_detected_objs(self.shared_data.clone());
             if dboxes.is_empty() {
-                // dboxes is empty
-                //println!("No objects detected.");
                 dboxes = self.prev_objects.clone();
-                //if self.det_timeout > 1 {
-                //    self.det_timeout-=1;
-                //} else {
-                //   self.det_timeout=30   ;
-                //   self.prev_objects = dboxes.clone();
-                //}      
-            } else {
+             } else {
                 // Do something if dboxes is not empty
-                println!("Detected objects: {:?}", dboxes);
+                //println!("Detected objects: {:?}", dboxes);
                 self.prev_objects = dboxes.clone();
             }
             // Iterate over all detected objects
@@ -278,13 +270,22 @@ impl eframe::App for MyApp {
 
 
                 let box_type = &dbox.otype;
+                let mut est_dist:f64 = 0.0;
+                if box_type == "pylon" {
+                    est_dist = (&dbox.dist*10.0).round() / 10.0; // round dist 
+                } else {est_dist = 0.0;}
                 let box_rect = Rect::from_min_size(pos2(x1, y1), vec2(width, height)); // Example coordinates and size
                 //println!("> box_type: {:?} box_rect {:?}",box_type,box_rect);
                 let stroke = Stroke::new(2.0, Color32::from_rgb(255, 0, 0));
-                let label_text = format!("Detected Object Type: {}", box_type);
+                let label_text = format!("Detected Object Type: {} Probability: {}  Pixel height:{} Est distance [m] {}", 
+                    box_type,
+                    &dbox.prob,
+                    height,
+                    est_dist,
+                );
 
                 // Calculate position for the label on top of the image
-                let label_position = pos2(300.0, 500.0); // Adjust the offset as needed
+                let label_position = pos2(50.0, 500.0); // Adjust the offset as needed
 
                 // Use a horizontal layout to position the label
                     ui.horizontal(|ui| {
@@ -310,6 +311,7 @@ struct DetObj {
     box_location: BoxCor,
     otype: String,
     prob: f32,
+    dist: f64,
 }
 
 fn get_detected_objs(shared_data: Arc<Mutex<Vec<String>>>) -> Vec<DetObj> {

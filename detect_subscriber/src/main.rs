@@ -32,6 +32,7 @@ struct DetObj {
     box_location: BoxCor,
     otype: String,
     prob: f32,
+    dist: f64,
 }
 
 
@@ -73,7 +74,7 @@ fn handle_client(mut stream: UnixStream, shared_detected_objects: Arc<Mutex<Vec<
                     eprintln!("Failed to write to stream: {}", e);
                     break; // Exit the loop if writing to the stream fails
                 }
-                println!("> Sent client detected data: {:?}", serialized);
+                //println!("> Sent client detected data: {:?}", serialized);
             },
             Err(e) => {
                 eprintln!("Failed to serialize data: {}", e);
@@ -136,7 +137,7 @@ async fn main() -> anyhow::Result<()> {
             match serde_json::from_str::<Vec<DetObj>>(&msg.data) {
                 Ok(detected_objects) => {
                 //send it to Unix stream 
-                    println!(">>> Recived in DetObj format: {:?}",detected_objects);
+                    //println!(">>> Recived in DetObj format: {:?}",detected_objects);
                     let mut shared_data = shared_detected_objects_clone.lock().unwrap();
                     *shared_data = detected_objects;
                 },
@@ -157,7 +158,7 @@ async fn main() -> anyhow::Result<()> {
             let filename = format!("received_image.jpg");
             std::fs::write(&filename, &msg.data).expect("Failed to write image file");
 
-            println!("Received and saved an image as {}", filename);
+            //println!("Received and saved an image as {}", filename);
         },
         &QoSProfile::default(),
     )?;
