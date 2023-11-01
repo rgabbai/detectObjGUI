@@ -3,6 +3,9 @@
 use eframe::egui;
 use egui::Rect;  // Import Rect from the egui module
 use egui::{Color32, vec2, pos2,Stroke,TextureOptions};  
+
+use egui::Align as Align;
+
 //Unix sockets
 use std::os::unix::net::UnixStream;
 use std::io::{Read};
@@ -19,9 +22,18 @@ use eframe::epaint::{ColorImage,ImageData};
 
 use std::sync::atomic::{AtomicBool, Ordering};
 
+
+// Constants
 const SOCKET_PATH: &str = "/tmp/robot/detect-socket";
 const REC_IMAGE_PATH: &str  = "/home/rgabbai/projects/Rust/obj_det_view_node/received_image.jpg";
-const Y_OFFSET: f32 = 110.0;
+//Image offser in GUI
+const Y_OFFSET: f32 = 2.0;
+const X_OFFSET: f32 = 8.0;
+const IMAGE_X_SIZE: f32 = 640.0;
+const IMAGE_Y_SIZE: f32 = 360.0;
+const X_CENTER: f32 = IMAGE_X_SIZE / 2.0;
+const Y_CENTER: f32 = IMAGE_Y_SIZE / 2.0;
+
 
 
 // Client thread for reciveing detection data from ROS node infra
@@ -135,6 +147,7 @@ struct MyApp {
 
 
 impl MyApp {
+    // Load Image from file
 
     fn load_image_if_updated(&mut self, ctx: &egui::Context) {
         let metadata = std::fs::metadata(REC_IMAGE_PATH).unwrap();
@@ -188,6 +201,7 @@ impl MyApp {
     // Rest of your impl...
 }
 
+/*
 impl MyApp {
     // Define a method to handle part of the UI
     fn show_image_ui(&mut self, ui: &mut egui::Ui) {
@@ -199,6 +213,49 @@ impl MyApp {
         }
     }
 }
+*/
+
+impl MyApp {
+// Place Image and AXIS 
+    fn show_image_ui(&mut self, ui: &mut egui::Ui) {
+           
+        
+        if let Some(texture) = &self.dynamic_texture {
+            // Draw the image
+            ui.image(texture);
+
+            // Draw X and Y axes on the image
+            let tex_size = texture.size();
+            let axis_color = egui::Color32::from_rgb(255, 255, 255); // White color for axes
+            let stroke = egui::Stroke::new(1.0, axis_color);  // 1 pixel line width
+   
+            //println!("Image size {}, {}",tex_size[0],tex_size[1]); 
+            // Center of the image
+            let center_x = tex_size[0] as f32 / 2.0 + X_OFFSET;
+            let center_y = tex_size[1] as f32 / 2.0 + Y_OFFSET;
+   
+            // Drawing X axis (horizontal line)
+            ui.painter().line_segment(
+                [egui::pos2(X_OFFSET, center_y), egui::pos2(tex_size[0] as f32+X_OFFSET, center_y)],
+                 stroke,
+            );
+   
+            // Drawing Y axis (vertical line)
+            ui.painter().line_segment(
+              [egui::pos2(center_x, Y_OFFSET), egui::pos2(center_x, tex_size[1] as f32 + Y_OFFSET)],
+              stroke,
+            );
+
+        } else {
+            ui.label("Image not loaded yet.");
+        }
+    
+    }
+
+    // Rest of your implementation...
+}
+
+
 
 
 impl eframe::App for MyApp {
@@ -227,7 +284,9 @@ impl eframe::App for MyApp {
         //TODO - this is costly but didn't find other solution to keep updating 
         ctx.request_repaint();
 
-        egui::CentralPanel::default().show(ctx, |ui| {
+       // egui::CentralPanel::default().show(ctx, |ui| {
+        
+            /*
             ui.heading("Image detection Application");
             ui.horizontal(|ui| {
                 let name_label = ui.label("From: ");
@@ -240,8 +299,9 @@ impl eframe::App for MyApp {
                 ctx.request_repaint();
             }
             ui.label(format!("From '{}', Object {}", self.name, self.item));
-
-            
+            */
+        egui::TopBottomPanel::top("image")
+            .show(ctx, |ui| {    
             self.load_image_if_updated(ctx);
             self.show_image_ui(ui);
 
@@ -267,6 +327,7 @@ impl eframe::App for MyApp {
                 let width = x2-x1; 
                 //println!("> width:{width} height:{height}");
                 let y1 = y1 + Y_OFFSET; // Y offset fix top left corner point
+                let x1 = x1 + X_OFFSET; // Y offset fix top left corner point
 
 
                 let box_type = &dbox.otype;
