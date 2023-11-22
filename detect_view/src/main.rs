@@ -19,18 +19,22 @@ use std::time::{SystemTime, UNIX_EPOCH};
 use eframe::egui::{TextureHandle};
 use eframe::epaint::{ColorImage,ImageData};
 
-
 use std::sync::atomic::{AtomicBool, Ordering};
+
 
 
 // Constants
 const SOCKET_PATH: &str = "/tmp/robot/detect-socket";
 const REC_IMAGE_PATH: &str  = "/home/rgabbai/projects/Rust/obj_det_view_node/received_image.jpg";
+//GUI SIZE
+const APP_X_SIZE: f32 = 700.0;
+const APP_Y_SIZE: f32 = 500.0;
 //Image offser in GUI
 const Y_OFFSET: f32 = 2.0;
 const X_OFFSET: f32 = 8.0;
-const IMAGE_X_SIZE: f32 = 640.0;
-const IMAGE_Y_SIZE: f32 = 360.0;
+const IMAGE_X_SIZE: f32 = 640.0;   // Dected model run on this size
+const IMAGE_Y_SIZE: f32 = 360.0;   // Dected model run on this size 
+const RESIZE:f32 = 2.0;
 const X_CENTER: f32 = IMAGE_X_SIZE / 2.0;
 const Y_CENTER: f32 = IMAGE_Y_SIZE / 2.0;
 
@@ -105,7 +109,7 @@ fn main() -> Result<(), eframe::Error> {
 
     env_logger::init(); // Log to stderr (if you run with `RUST_LOG=debug`).
     let options = eframe::NativeOptions {
-        initial_window_size: Some(egui::vec2(1000.0, 800.0)),
+        initial_window_size: Some(egui::vec2(APP_X_SIZE, APP_Y_SIZE)),
         resizable: false,
         mouse_passthrough: false,
         ..Default::default()
@@ -126,6 +130,7 @@ fn main() -> Result<(), eframe::Error> {
                 dynamic_texture: None,
                 last_update_time: UNIX_EPOCH,
                 needs_update:needs_update.clone(),
+                image_dim:  ImageDim::default(),
             })
         }),
     )
@@ -140,10 +145,22 @@ struct MyApp {
     dynamic_texture: Option<TextureHandle>,
     last_update_time: SystemTime,
     needs_update: Arc<Mutex<bool>>,
+    image_dim: ImageDim,
 
 }
 
-
+struct ImageDim {
+    x: usize,
+    y: usize,
+}
+impl Default for ImageDim {
+    fn default() -> Self {
+        ImageDim {
+            x: 640,
+            y: 360,
+        }
+    }
+}
 
 
 impl MyApp {
@@ -152,7 +169,8 @@ impl MyApp {
     fn load_image_if_updated(&mut self, ctx: &egui::Context) {
         let metadata = std::fs::metadata(REC_IMAGE_PATH).unwrap();
         let modified = metadata.modified().unwrap_or(UNIX_EPOCH);
-    
+        
+
         //println!(">image Meta data{:?} modified: {:?}",metadata,modified);
         if modified > self.last_update_time {
             let image = image::open(REC_IMAGE_PATH).unwrap().to_rgba8();
@@ -163,7 +181,8 @@ impl MyApp {
             //);
 
             let size = [image.width() as _, image.height() as _];
-    
+            self.image_dim.x = size[0];
+            self.image_dim.y = size[1];    
   
             // Convert the RgbaImage to Vec<Color32>
             let pixels: Vec<Color32> = image
@@ -303,10 +322,15 @@ impl eframe::App for MyApp {
         egui::TopBottomPanel::top("image")
             .show(ctx, |ui| {    
             self.load_image_if_updated(ctx);
-            self.show_image_ui(ui);
+            // according to image size normalize to analysed image fixed size of 640x360
+            
+            
+            let resize_x = IMAGE_X_SIZE/ (self.image_dim.x as f32);
+            let resize_y = IMAGE_Y_SIZE / (self.image_dim.y as f32);
 
+            self.show_image_ui(ui);    
             // Draw a square box on top of the image based on detected objects 
-            //let dboxes: Vec<DetObj> = get_detected_objs(self.response_rx.clone());
+     
 
             let mut dboxes: Vec<DetObj> = get_detected_objs(self.shared_data.clone());
             if dboxes.is_empty() {
@@ -323,11 +347,11 @@ impl eframe::App for MyApp {
                 let BoxCor(x1,y1,x2,y2) = dbox.box_location;
                 //println!("> Detect Cor: {x1} {y1} {x2} {y2}");
 
-                let height = y2-y1;  
-                let width = x2-x1; 
+                let height = (y2-y1)/resize_y;  
+                let width = (x2-x1)/resize_x; 
                 //println!("> width:{width} height:{height}");
-                let y1 = y1 + Y_OFFSET; // Y offset fix top left corner point
-                let x1 = x1 + X_OFFSET; // Y offset fix top left corner point
+                let y1 = (y1 + Y_OFFSET/resize_y)/resize_y; // Y offset fix top left corner point
+                let x1 = (x1 + X_OFFSET/resize_x)/resize_x; // Y offset fix top left corner point
 
 
                 let box_type = &dbox.otype;
