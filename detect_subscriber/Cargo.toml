@@ -15,7 +15,8 @@ serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 rand = "0.8.5"
 anyhow = "1.0"
-rclrust = { git = "https://github.com/rclrust/rclrust.git" }
 rclrust-msg = { git = "https://github.com/rclrust/rclrust.git" }
+rclrust = { git = "https://github.com/rclrust/rclrust.git", features = ["foxy"]}
+rcl-sys = { git = "https://github.com/rclrust/rclrust.git", features = ["foxy"]}
 tokio = { version = "1", features = ["full"] }
 chrono = "0.4"  # You can check https://crates.io/crates/chrono for the latest version
