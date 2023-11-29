@@ -760,6 +760,7 @@ dependencies = [
  "anyhow",
  "chrono",
  "rand",
+ "rcl-sys",
  "rclrust",
  "rclrust-msg",
  "serde",
