@@ -9,12 +9,12 @@ publish = false
 
 
 [dependencies]
-eframe = { path = "/home/rgabbai/projects/Rust/egui/crates/eframe", features = [
+eframe = { version = "0.23.0",features = [
     "__screenshot", # __screenshot is so we can dump a screenshot using EFRAME_SCREENSHOT_TO
 ] }
 
 # For image support:
-egui_extras = { path = "/home/rgabbai/projects/Rust/egui/crates/egui_extras", features = ["image"] }
+egui_extras = { version = "0.23.0", features = ["image"] }
 image = { version = "0.24", default-features = false, features = [
   "jpeg",
   "png",

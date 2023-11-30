@@ -25,7 +25,7 @@ use std::sync::atomic::{AtomicBool, Ordering};
 
 // Constants
 const SOCKET_PATH: &str = "/tmp/robot/detect-socket";
-const REC_IMAGE_PATH: &str  = "/home/rgabbai/projects/Rust/obj_det_view_node/received_image.jpg";
+const REC_IMAGE_PATH: &str  = "./received_image.jpg";
 //GUI SIZE
 const APP_X_SIZE: f32 = 700.0;
 const APP_Y_SIZE: f32 = 500.0;
