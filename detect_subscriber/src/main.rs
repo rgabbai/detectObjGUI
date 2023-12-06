@@ -3,7 +3,7 @@ use std::io::prelude::*;
 use std::thread;
 use serde::{Serialize, Deserialize};
 use serde_json;
-use std::time::{Duration};
+use std::time::{Duration,SystemTime};
 //use rand::Rng; // Import the Rng trait
 
 // ROS Client Lib 
@@ -13,12 +13,14 @@ use rclrust::{qos::QoSProfile, rclrust_info};
 use rclrust_msg::std_msgs::msg::String as String_;
 use rclrust_msg::sensor_msgs::msg::CompressedImage;
 //use chrono::Utc;
-
+use clap::{App, Arg}; // handle arguments 
 
 use std::sync::Mutex; // to pass shared data between threads
-
+use std::path::Path;
+use std::fs;
 
 //Const sections
+const SOCKET_DIR: &str = "/tmp/robot";
 const SOCKET_PATH: &str = "/tmp/robot/detect-socket";
 const TOPIC_NAME: &str = "detect";
 const IMAGE_TOPIC_NAME: &str = "Compressed_camera_image";
@@ -43,28 +45,6 @@ fn handle_client(mut stream: UnixStream, shared_detected_objects: Arc<Mutex<Vec<
     loop {
 
         let detected_objects = shared_detected_objects.lock().unwrap().clone();
-
-        // Randomly generate the first value of BoxCor
-        //let mut rng = rand::thread_rng();
-        //let random_x: f32 = rng.gen_range(100.0..=700.0);
-        //let random_y: f32 = rng.gen_range(100.0..=500.0);
-
-        // Create a vector of DetObj
-        //let detected_objects = vec![
-        //    DetObj {
-        //        box_location: BoxCor(470.0, 220.0, 50.0, 180.0),
-        //        otype: "person1".to_string(),
-        //        prob: 0.9,            
-        //    },
-        //    DetObj {
-        //        box_location: BoxCor(random_x, random_y, 80.0, 100.0),
-        //        otype: "person2".to_string(),
-        //        prob: 0.9,
-        //    },
-        //    // ... Add more objects as needed
-        //];
-
-        
 
         // Serialize the data
         match serde_json::to_string(&detected_objects) {
@@ -91,9 +71,32 @@ fn handle_client(mut stream: UnixStream, shared_detected_objects: Arc<Mutex<Vec<
 async fn main() -> anyhow::Result<()> {
 
     println!("************ Detect subscriber node: ********** ");
+    let matches = App::new("ROS Node Tracker")
+    .version("1.0")
+    .author("Rony Gabbai")
+    .about("Detect subscriber node")
+    .arg(Arg::new("capture")
+         .short('c')
+         .long("capture")
+         .value_name("CAPTURE")
+         .help("save recived images")
+         .takes_value(false)
+         .required(false))
+    .get_matches();
+
+    let capture = matches.is_present("capture");
+    if capture {
+        println!("Recived images will be saved - remember to clear later ...")
+    }
 
     let shared_detected_objects = Arc::new(Mutex::new(Vec::new()));
 
+    // create unix pipe tmp dir of not exist
+    let b: bool = Path::new(SOCKET_DIR).is_dir();
+    if !b {
+        println!("Creating temp socket dir:{:?}",SOCKET_DIR);
+        fs::create_dir(SOCKET_DIR)?;
+    }
 
 
     std::fs::remove_file(SOCKET_PATH).ok(); // Remove the socket file if it exists
@@ -154,9 +157,16 @@ async fn main() -> anyhow::Result<()> {
     let _image_subscription = node.create_subscription(
         IMAGE_TOPIC_NAME, // Change to your actual image topic name
         move |msg: Arc<CompressedImage>| {
-            //let filename = format!("received_image_{}.jpg", Utc::now().timestamp_millis());
+            //keep image for GUI voew
             let filename = format!("received_image.jpg");
             std::fs::write(&filename, &msg.data).expect("Failed to write image file");
+            // keep images for AI training  
+            if capture {
+                //let filename = format!("received_image_{}.jpg", Utc::now().timestamp_millis());
+                //let t = ts!(1335020400);
+                let filename = format!("received_image_{:?}.jpg",SystemTime::now());
+                std::fs::write(&filename, &msg.data).expect("Failed to write image file");
+            }
 
             //println!("Received and saved an image as {}", filename);
         },

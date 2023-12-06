@@ -20,3 +20,4 @@ rclrust = { git = "https://github.com/rclrust/rclrust.git", features = ["foxy"]}
 rcl-sys = { git = "https://github.com/rclrust/rclrust.git", features = ["foxy"]}
 tokio = { version = "1", features = ["full"] }
 chrono = "0.4"  # You can check https://crates.io/crates/chrono for the latest version
+clap = "3.0"
